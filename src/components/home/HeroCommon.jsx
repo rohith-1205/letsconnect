@@ -39,8 +39,8 @@ export default function HeroCommon() {
       {/* Grid Pattern mask overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#161030_1px,transparent_1px),linear-gradient(to_bottom,#161030_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-35 pointer-events-none" />
 
-      {/* Floating Badges */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-hidden">
+      {/* Floating Badges - Desktop Only */}
+      <div className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-10 overflow-hidden">
         {floatingBadges.map((badge, idx) => {
           const Icon = badge.icon;
           return (
@@ -107,6 +107,29 @@ export default function HeroCommon() {
         >
           Bridging the Gap to Success
         </motion.h2>
+
+        {/* Mobile/Tablet Badges (Inline list) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.25 }}
+          className="flex flex-wrap justify-center gap-3 mb-8 lg:hidden z-20"
+        >
+          {floatingBadges.map((badge, idx) => {
+            const Icon = badge.icon;
+            return (
+              <div
+                key={idx}
+                className={`glass-card border px-4 py-2 rounded-xl flex items-center gap-2 bg-gradient-to-br ${badge.color} shadow-lg`}
+              >
+                <Icon className="w-4 h-4" />
+                <span className="text-textPrimary font-semibold text-xs tracking-wide">
+                  {badge.text}
+                </span>
+              </div>
+            );
+          })}
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
