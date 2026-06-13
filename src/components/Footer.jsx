@@ -1,4 +1,5 @@
 import { Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const socialLinks = [
@@ -51,14 +52,15 @@ export default function Footer() {
         
         {/* Branding Column */}
         <div className="md:col-span-4 flex flex-col items-start">
-          <a href="#home" className="flex items-center gap-2 group mb-4">
+          <Link to="/" className="flex items-center gap-2 group mb-4">
             <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center border border-primary/30 group-hover:scale-105 group-hover:border-primary/50 transition-all duration-300">
               <Zap className="w-5 h-5 text-accent fill-accent animate-pulse" />
             </div>
             <span className="font-heading font-extrabold text-xl tracking-tight text-textPrimary">
               Let's <span className="text-accent">Connect</span>
             </span>
-          </a>
+          </Link>
+
           
           <p className="text-textMuted text-sm leading-relaxed max-w-sm font-light mb-6">
             Building tomorrow's professionals, today. Aligning compliance precision and career growth capability for individual and enterprise success.
@@ -93,13 +95,13 @@ export default function Footer() {
               { name: "Service Packages", path: "/business#packages" },
               { name: "Contact & Consult", path: "/business#contact" }
             ].map((link, idx) => (
-              <a
+              <Link
                 key={idx}
-                href={link.path}
+                to={link.path}
                 className="text-textMuted hover:text-textPrimary text-sm transition-colors w-fit"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -116,13 +118,13 @@ export default function Footer() {
               { name: "Testimonials & Feedback", path: "/training#testimonials" },
               { name: "Student Enquiry", path: "/training#contact" }
             ].map((link, idx) => (
-              <a
+              <Link
                 key={idx}
-                href={link.path}
+                to={link.path}
                 className="text-textMuted hover:text-textPrimary text-sm transition-colors w-fit"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
