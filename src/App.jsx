@@ -1,23 +1,21 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 import { Toaster } from "react-hot-toast";
 
-// Import components
+// Import Shared Shell
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Pedagogy from "./components/Pedagogy";
-import Curriculum from "./components/Curriculum";
-import HowItWorks from "./components/HowItWorks";
-import Workload from "./components/Workload";
-import Assessment from "./components/Assessment";
-import Testimonials from "./components/Testimonials";
-import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
+
+// Import Page Containers
+import Home from "./pages/Home";
+import BusinessSite from "./pages/BusinessSite";
+import TrainingSite from "./pages/TrainingSite";
 
 export default function App() {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +29,19 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Scroll to section when url has a hash anchor on path transitions
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -43,40 +54,17 @@ export default function App() {
       {/* Toast Notification Container */}
       <Toaster position="bottom-right" reverseOrder={false} />
 
-      {/* Navigation Bar */}
+      {/* Navigation Bar (Shared across all portals) */}
       <Navbar />
 
-      {/* Main Sections */}
-      <main>
-        {/* Hero Section */}
-        <Hero />
+      {/* Routed Pages */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/business" element={<BusinessSite />} />
+        <Route path="/training" element={<TrainingSite />} />
+      </Routes>
 
-        {/* About & Operational Framework (including Stats inside) */}
-        <About />
-
-        {/* The 4-Year Journey (Curriculum) */}
-        <Curriculum />
-
-        {/* Pedagogy Split (Donut Chart) */}
-        <Pedagogy />
-
-        {/* How It Works (Timeline) */}
-        <HowItWorks />
-
-        {/* Workload Distribution (Bar Chart) */}
-        <Workload />
-
-        {/* Assessment & Certification */}
-        <Assessment />
-
-        {/* Testimonials Carousel */}
-        <Testimonials />
-
-        {/* Contact Form & Details */}
-        <ContactForm />
-      </main>
-
-      {/* Footer */}
+      {/* Shared Footer */}
       <Footer />
 
       {/* Back to Top Button */}

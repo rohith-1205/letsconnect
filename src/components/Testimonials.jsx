@@ -8,18 +8,6 @@ export default function Testimonials() {
   const [isPaused, setIsPaused] = useState(false);
   const timerRef = useRef(null);
 
-  // Auto-play interval setup
-  useEffect(() => {
-    if (!isPaused) {
-      timerRef.current = setInterval(() => {
-        handleNext();
-      }, 4000);
-    }
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [isPaused, currentIndex]);
-
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
@@ -31,6 +19,18 @@ export default function Testimonials() {
   const handleDotClick = (index) => {
     setCurrentIndex(index);
   };
+
+  // Auto-play interval setup
+  useEffect(() => {
+    if (!isPaused) {
+      timerRef.current = setInterval(() => {
+        handleNext();
+      }, 4000);
+    }
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isPaused, currentIndex]);
 
   const currentTestimonial = testimonials[currentIndex];
 

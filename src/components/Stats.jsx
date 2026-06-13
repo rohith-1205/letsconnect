@@ -3,19 +3,16 @@ import { motion, useInView } from "framer-motion";
 import { aboutStats } from "../data/programData";
 
 export function AnimatedCounter({ value, duration = 1.5 }) {
-  const [count, setCount] = useState(0);
+  const parsedValue = parseInt(value, 10);
+  const isValueNan = isNaN(parsedValue);
+  const [count, setCount] = useState(() => (isValueNan ? value : 0));
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || isValueNan) return;
 
-    const end = parseInt(value, 10);
-    if (isNaN(end)) {
-      setCount(value);
-      return;
-    }
-
+    const end = parsedValue;
     let startTime = null;
     const animate = (timestamp) => {
       if (!startTime) startTime = timestamp;
@@ -28,7 +25,7 @@ export function AnimatedCounter({ value, duration = 1.5 }) {
       }
     };
     requestAnimationFrame(animate);
-  }, [value, duration, isInView]);
+  }, [parsedValue, isValueNan, duration, isInView]);
 
   return <span ref={ref}>{count}</span>;
 }
