@@ -1,21 +1,37 @@
-# ⚡ Let's Connect — Soft Skills Training Programme
+# ⚡ Let's Connect — Dual-Engine Business Portal
 
-A magnificent, fully responsive business portfolio website for **LET'S CONNECT — Soft Skills Training Programme**, built with Vite + React, TailwindCSS, Framer Motion, and Recharts.
+A premium, fully responsive business portfolio platform for **LET'S CONNECT**, built with React 19, Vite 8, TailwindCSS v3, Framer Motion, and Recharts. 
 
-Designed first for a dark, premium aesthetic, it features scroll-triggered transitions, interactive tabs, count-up stats, customized data charts, and dynamic content cards.
+The application is structured into two core service verticals under one brand, coupled with a dedicated free social initiative.
 
 ---
 
-## 🚀 Tech Stack
+## 🏛️ Brand Architecture & Portals
 
-- **Framework**: [Vite](https://vite.dev/) + [React 18](https://react.dev/)
-- **Styling**: [TailwindCSS v3](https://tailwindcss.com/) (fully configured via `tailwind.config.js`)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/) (scroll transitions, tab sliding highlights, floating elements)
-- **Charts**: [Recharts](https://recharts.org/) (Custom Donut & linear-gradient Bar charts)
-- **Routing**: [React Router v6](https://reactrouter.com/) (`BrowserRouter` layout support)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Notification**: [React Hot Toast](https://react-hot-toast.com/) (validation & success status toasts)
-- **Fonts**: Google Fonts ("Inter" for body copy, "Sora" for headlines)
+### 1. Unified Landing Page (`/`)
+- A high-impact landing portal with "The Gap" thesis introducing the split-engine brand setup.
+- Features an interactive **Service Selector (`ServiceToggle.jsx`)** routing users to their target portal.
+
+### 2. Financial Services & Tax Consultation (`/business`)
+- **Focus**: Led by **Vishal** (Founder & Business Tax Consultant), specializing in commercial auditing, taxation, GST setup, corporate compliance, and loan support.
+- **Key Sections**: Custom comparative criteria table (`SealOfTrust.jsx`), structured pricing tiers, and client onboarding roadmap.
+- **Tax Literacy Platform (Subsection)**: A free, public-awareness educational initiative integrated as a scrollable subsection (`#tax-literacy`). Features its own milestones timeline, marketing content previews, taglines, and live Webinar registration forms.
+
+### 3. Training & Development (`/training`)
+- **Focus**: Led by **Padmaja L** (Co-Founder & HR Tech Consultant), restoring the original student soft-skills career readiness program.
+- **Key Sections**: Progressive 4-year curriculum tabs, interactive training split visualizations, workload distributions, assessments, candidate testimonials, and college enquiry forms.
+
+---
+
+## 🚀 Tech Stack & Dependencies
+
+- **Framework**: [Vite 8](https://vite.dev/) + [React 19](https://react.dev/)
+- **Styling**: [TailwindCSS v3](https://tailwindcss.com/)
+- **Animations**: [Framer Motion 12](https://www.framer.com/motion/) (smooth transitions, tab layout transformations, drawers)
+- **Charts**: [Recharts 3](https://recharts.org/) (Interactive Custom Donut & linear-gradient Bar charts)
+- **Routing**: [React Router 7](https://reactrouter.com/) (Declarative client-side routing & auto-scroll viewport handlers)
+- **Notification**: [React Hot Toast](https://react-hot-toast.com/) (Custom validated toast banners)
+- **Hosting Config**: SPA fallback routing configured in `vercel.json` to prevent server-side `404: NOT_FOUND` errors on direct paths or page refreshes.
 
 ---
 
@@ -23,6 +39,7 @@ Designed first for a dark, premium aesthetic, it features scroll-triggered trans
 
 - **Primary Color**: `#6C3FEE` (deep violet-purple)
 - **Accent Color**: `#F97316` (vibrant orange)
+- **Secondary Accent**: `#14B8A6` (teal - designated for the free Tax Literacy Platform)
 - **Dark BG**: `#0F0A1E` (near-black indigo)
 - **Surface BG**: `#1A1035`
 - **Card BG**: `#221548`
@@ -35,19 +52,15 @@ Designed first for a dark, premium aesthetic, it features scroll-triggered trans
 
 ---
 
-## ✨ Key Features
+## ✨ Key Interactive Features
 
-1. **Sticky Glassmorphism Navbar**: Responsive navigation bar that transitions from transparent to a glass-blur backdrop on scroll, with a custom mobile drawer.
-2. **Floating Stat Pills**: Hero section with interactive, staggered floating stat pills showcasing training metrics.
-3. **Animated Overview Video Modal**: An interactive video showcase player modal.
-4. **Animated Stat Counters**: Count-up numbers triggered dynamically as they enter the viewport using `useInView` and `requestAnimationFrame`.
-5. **Interactive 4-Year tabs (Curriculum)**: Smooth sliding tab selector powered by Framer Motion's `layoutId` that dynamically updates curriculum content blocks.
-6. **Pedagogy Donut Chart**: An interactive Recharts PieChart demonstrating the 70/20/10 training philosophy with custom glass tooltips.
-7. **Responsive Stepper timeline**: A horizontal timeline for desktop and a vertical stepper for mobile screens representing process flows.
-8. **Workload Gradient BarChart**: A linear-gradient Recharts BarChart rendering training day allocations per academic year.
-9. **Interactive Testimonials**: An auto-playing slider carousel with manual arrows, navigation dots, and hover-to-pause logic.
-10. **Validated Contact Form**: Complete contact form with custom select dropdowns, form validation, loading states, and success toasts.
-11. **Back to Top Button**: Floating quick-scroll-to-top button that fades in once scroll depth exceeds 300px.
+1. **Vercel Routing Fallback**: Customized `vercel.json` redirecting all routes (`/(.*)`) to `index.html` allowing React Router to handle page reloads client-side.
+2. **Contextual Navigation Bar**: `Navbar.jsx` dynamically updates its links, active portal badges, and call-to-actions depending on which page is active.
+3. **Optimized Footer Links**: Built with React Router `<Link>` components to support fast, client-side route transitions and anchor targets without page reloads.
+4. **Auto-Scroll Anchoring**: Handles URL hashes (e.g. `/business#tax-literacy`) on load and page transitions to smoothly scroll down to the targeted element.
+5. **Interactive 4-Year Tabs**: Curriculum components utilizing Framer Motion's `layoutId` for smooth active border highlights.
+6. **Animated Counter Pills**: Viewport-triggered statistics cards with count-up animations using requestAnimationFrame.
+7. **Recharts Dashboards**: Includes custom tooltips and gradient fills for training distribution and workload allocations.
 
 ---
 
@@ -56,22 +69,44 @@ Designed first for a dark, premium aesthetic, it features scroll-triggered trans
 ```bash
 src/
 ├── components/
-│   ├── About.jsx         # Metric counters & philosophical description
-│   ├── Assessment.jsx    # Graduation criteria cards with border glow
-│   ├── ContactForm.jsx   # Form validation, info cards, and react-hot-toast trigger
-│   ├── Curriculum.jsx    # Interactive tabs for Year 1 to 4 courses
-│   ├── Footer.jsx        # Tagline, site navigation, & custom social SVGs
-│   ├── Hero.jsx          # Float animations, CTAs, and video popup modal
-│   ├── HowItWorks.jsx    # 4-step responsive stepper timeline
-│   ├── Navbar.jsx        # Sticky glassmorphism header & mobile menu drawer
-│   ├── Pedagogy.jsx      # Recharts Donut chart displaying split ratios
-│   ├── Stats.jsx         # Counter utility cards with viewports triggers
-│   └── Workload.jsx      # Recharts Bar chart showing day allocations
-├── data/
-│   └── programData.js    # Clean structural arrays & objects (No JSX strings)
-├── App.jsx               # Assembles page structure and Toaster elements
-├── main.jsx              # Application bootstrapper and BrowserRouter wrapper
-└── index.css             # Tailwind imports and global style declarations
+│   ├── business/          # Financial Services components
+│   │   ├── About.jsx              # Vishal's firm overview
+│   │   ├── ContactBusiness.jsx    # Consultation form
+│   │   ├── DualEngineHero.jsx     # Commercial hero section
+│   │   ├── FinancialServices.jsx  # Main tax/audit services list
+│   │   ├── HowItWorks.jsx         # Onboarding roadmap stepper
+│   │   ├── SealOfTrust.jsx        # Comparative checklist table
+│   │   ├── ServicePackages.jsx    # Firm service pricing levels
+│   │   └── TrainingServices.jsx   # Corporate training modules
+│   ├── home/              # Shared landing page components
+│   │   ├── HeroCommon.jsx         # Master landing header with visual chips
+│   │   ├── TheGap.jsx             # Corporate/student problem statement
+│   │   └── TwoEngines.jsx         # Summary of dual business verticals
+│   ├── taxlit/            # Free Tax Literacy Platform components
+│   │   ├── ContactTax.jsx         # Webinar booking form
+│   │   ├── Goals.jsx              # Strategic milestones timeline
+│   │   ├── MarketingStrategy.jsx  # Content formats preview cards
+│   │   ├── RevenueModel.jsx       # Non-profit funding mechanism info
+│   │   ├── Taglines.jsx           # Core messaging highlight block
+│   │   ├── TaxHero.jsx            # Initiative hero section
+│   │   ├── USP.jsx                # Key differentiator metrics
+│   │   └── VisionMission.jsx      # Vision/Mission details
+│   ├── Footer.jsx         # Global footer with router links
+│   ├── Navbar.jsx         # Dynamic sticky glassmorphic navigation header
+│   └── ServiceToggle.jsx  # Landing split path selector
+├── data/                  # Decoupled static data files
+│   ├── businessData.js    # Data lists for compliance & consultancy
+│   ├── programData.js     # Data lists for soft skills curriculum
+│   └── taxlitData.js      # Data lists for tax literacy initiative
+├── pages/                 # Route containers
+│   ├── BusinessSite.jsx   # /business page (Vishal's services + Tax Literacy subsection)
+│   ├── Home.jsx           # / landing portal page
+│   ├── TaxLitSite.jsx     # Standalone Tax Literacy preview page
+│   └── TrainingSite.jsx   # /training page (Padmaja's soft skills program)
+├── App.css                # Custom site styles
+├── App.jsx                # Router setup and global back-to-top handler
+├── index.css              # Custom styling definitions & Tailwind utilities
+└── main.jsx               # App entry point
 ```
 
 ---
@@ -79,7 +114,6 @@ src/
 ## ⚙️ Getting Started
 
 ### 1. Clone & Install Dependencies
-Ensure you have Node.js installed on your machine.
 ```bash
 git clone https://github.com/rohith-1205/letsconnect.git
 cd letsconnect
@@ -87,15 +121,14 @@ npm install
 ```
 
 ### 2. Launch Local Development Server
-Start the development server for local preview.
 ```bash
 npm run dev
 ```
-Open **[http://localhost:5173](http://localhost:5173)** (or the port displayed in terminal) to view the live app.
+Open **[http://localhost:5173](http://localhost:5173)** in your browser.
 
-### 3. Build for Production
-Bundle and optimize all assets for deployment.
+### 3. Build & Verify
 ```bash
 npm run build
+npm run lint
 ```
-Verify the production-ready build outputs in the `dist` folder.
+Build files are compiled into `dist/`. The project contains fully compliant ESLint rules and builds warnings-free.
