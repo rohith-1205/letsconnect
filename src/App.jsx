@@ -12,6 +12,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import BusinessSite from "./pages/BusinessSite";
 import TrainingSite from "./pages/TrainingSite";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 export default function App() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -62,6 +64,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/business" element={<BusinessSite />} />
         <Route path="/training" element={<TrainingSite />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
 
       {/* Shared Footer */}
