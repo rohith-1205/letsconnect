@@ -21,7 +21,7 @@ export default function ContactTax() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Validations
@@ -44,28 +44,53 @@ export default function ContactTax() {
 
     setIsSubmitting(true);
 
-    // Simulate submission delay
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast.success("Successfully registered for the next webinar!", {
-        style: {
-          background: "#0F0A1E",
-          color: "#F5F3FF",
-          border: "1px solid rgba(20, 184, 166, 0.3)"
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY_HERE";
+    const payload = {
+      access_key: accessKey,
+      subject: "Let's Connect - New Webinar Registration",
+      from_name: "Let's Connect - Tax Literacy Platform",
+      ...formData
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
         },
-        iconTheme: {
-          primary: "#14b8a6",
-          secondary: "#0F0A1E"
-        }
+        body: JSON.stringify(payload)
       });
-      // Clear form
-      setFormData({
-        name: "",
-        email: "",
-        state: "",
-        language: ""
-      });
-    }, 1200);
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Successfully registered for the next webinar!", {
+          style: {
+            background: "#0F0A1E",
+            color: "#F5F3FF",
+            border: "1px solid rgba(20, 184, 166, 0.3)"
+          },
+          iconTheme: {
+            primary: "#14b8a6",
+            secondary: "#0F0A1E"
+          }
+        });
+        // Clear form
+        setFormData({
+          name: "",
+          email: "",
+          state: "",
+          language: ""
+        });
+      } else {
+        toast.error(result.message || "Submission failed. Please check your Web3Forms configuration.");
+      }
+    } catch (error) {
+      toast.error("Network error. Please check your internet connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [
