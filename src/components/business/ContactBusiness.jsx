@@ -316,11 +316,11 @@ export default function ContactBusiness() {
                     className="w-full bg-surfaceBg border border-white/10 rounded-xl px-4 py-3 text-textPrimary text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
                   >
                     <option value="" disabled className="text-textMuted">Select Service / Package</option>
+                    <option value="Financial Services Only">Financial Services (GST, ITR, Loans)</option>
                     <option value="Startup Package">Startup Foundation Package</option>
                     <option value="Student Package">Student Starter Package</option>
                     <option value="Growth Package">Growth Acceleration Package</option>
                     <option value="Executive Package">Professional Excellence Package</option>
-                    <option value="Financial Services Only">Financial Services (GST, ITR, Loans)</option>
                     <option value="Training Only">Training & Development (Bootcamps)</option>
                   </select>
                 </div>
