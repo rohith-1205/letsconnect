@@ -7,7 +7,7 @@ const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
       <div className="glass-card py-2.5 px-4 rounded-xl border border-white/10 shadow-2xl bg-cardBg/90 backdrop-blur-md text-left">
-        <span className="text-textPrimary font-semibold text-sm block">{payload[0].payload.year}</span>
+        <span className="text-textPrimary font-semibold text-sm block">{payload[0].payload.phaseName}</span>
         <span className="text-accent font-extrabold text-base mt-0.5 block">{payload[0].payload.label}</span>
       </div>
     );
@@ -34,11 +34,11 @@ export default function Workload() {
             Workload Distribution
           </span>
           <h2 className="text-3xl md:text-5xl font-bold font-heading mt-6 mb-6 leading-tight">
-            Training Days Per Academic Year
+            Training Days Per Phase
           </h2>
           <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-accent mx-auto mb-8 rounded-full" />
           <p className="text-textMuted text-base md:text-lg leading-relaxed font-light">
-            Our modular training is scheduled strategically to ensure students absorb soft skills incrementally without academic load conflicts.
+            Our modular training is scheduled strategically to ensure participants absorb soft skills incrementally without conflicting with other priorities.
           </p>
         </motion.div>
 
@@ -59,7 +59,7 @@ export default function Workload() {
                 </linearGradient>
               </defs>
               <XAxis 
-                dataKey="year" 
+                dataKey="phaseName" 
                 stroke="#A89FC8" 
                 fontSize={12} 
                 tickLine={false} 
@@ -112,7 +112,7 @@ export default function Workload() {
         >
           <Info className="w-5 h-5 text-accent flex-shrink-0 mt-0.5 md:mt-0" />
           <p className="text-textPrimary text-sm font-medium leading-relaxed">
-            <span className="text-accent font-bold">Note:</span> Foundational years are intensive; application years are focused.
+            <span className="text-accent font-bold">Note:</span> Foundational phases are intensive; application phases are focused.
           </p>
         </motion.div>
       </div>

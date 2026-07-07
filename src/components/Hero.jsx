@@ -48,7 +48,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-textMuted text-lg sm:text-xl font-light mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
           >
-            A 4-year progressive soft skills journey from self-mastery to corporate readiness.
+            A progressive soft skills training journey from self-mastery to professional excellence.
           </motion.p>
 
           <motion.div

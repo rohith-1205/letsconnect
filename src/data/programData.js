@@ -8,20 +8,20 @@ export const navLinks = [
 ];
 
 export const heroStats = [
-  { value: "6", label: "Cycles/Year" },
-  { value: "3", label: "Day Bootcamps" },
-  { value: "90%", label: "Attendance Required" }
+  { value: "4", label: "Learning Phases" },
+  { value: "3-Day", label: "Intensive Bootcamps" },
+  { value: "100%", label: "Practical Learning" }
 ];
 
 export const aboutStats = [
-  { value: 4, label: "Undergraduate Cycle", suffix: " Years" },
-  { value: 3, label: "Intensive Bootcamps", suffix: " Days" },
-  { value: 6, label: "Per Year, Per Dept", suffix: " Cycles" }
+  { value: 4, label: "Progressive Learning Phases", suffix: "" },
+  { value: 3, label: "Intensive Bootcamp", suffix: " Days" },
+  { value: 100, label: "Practical Experiential Focus", suffix: "%" }
 ];
 
 export const aboutContent = {
-  headline: "Empowering Next-Gen Leaders through Practical soft skills",
-  description: "LET'S CONNECT is a comprehensive 4-year progressive soft skills training program designed to bridge the gap between academic theory and corporate readiness. Built on peer feedback, experiential learning, and continuous assessment, the program takes students on an transformative journey from fundamental communication and self-mastery to complex problem solving, leadership, and placement readiness."
+  headline: "Empowering Next-Gen Leaders and Teams through Practical Soft Skills",
+  description: "LET'S CONNECT is a comprehensive, progressive soft skills training ecosystem designed to bridge the gap between academic theory, professional communication, and corporate excellence. Offering both a multi-year integrated curriculum for educational institutions and fast-track bootcamps for corporate teams, our peer-feedback and experiential training empowers participants to master communication, leadership, and workplace readiness."
 };
 
 export const pedagogyData = [
@@ -32,8 +32,8 @@ export const pedagogyData = [
 
 export const curriculumData = [
   {
-    year: 1,
-    title: "Year 1 — The Professional Foundation",
+    phase: 1,
+    title: "Phase 1 — The Professional Foundation",
     description: "Focus on fundamental communication, self-awareness, and building a professional persona.",
     topics: [
       {
@@ -66,8 +66,8 @@ export const curriculumData = [
     ]
   },
   {
-    year: 2,
-    title: "Year 2 — Collaborative Intelligence",
+    phase: 2,
+    title: "Phase 2 — Collaborative Intelligence",
     description: "Shifting the focus to team dynamics, productivity, and structured problem-solving.",
     topics: [
       {
@@ -100,9 +100,9 @@ export const curriculumData = [
     ]
   },
   {
-    year: 3,
-    title: "Year 3 — Career Architecture",
-    description: "Preparing for industry placement processes, writing resumes, and mastering group discussions.",
+    phase: 3,
+    title: "Phase 3 — Career Architecture & Branding",
+    description: "Preparing for professional placement processes, writing impact resumes, and mastering workplace collaboration.",
     topics: [
       {
         title: "Resume Restructuring",
@@ -125,9 +125,9 @@ export const curriculumData = [
     ]
   },
   {
-    year: 4,
-    title: "Year 4 — The Corporate Launchpad",
-    description: "Final polish for job search success, mock interviews, and adapting to workplace environments.",
+    phase: 4,
+    title: "Phase 4 — The Corporate Launchpad",
+    description: "Final polish for professional success, mock interviews, leadership training, and adapting to corporate environments.",
     topics: [
       {
         title: "Interview Mastery",
@@ -154,85 +154,80 @@ export const curriculumData = [
 export const howItWorksSteps = [
   {
     step: 1,
-    title: "Join Your Department Cohort",
-    desc: "Get grouped with your departmental peers to foster collaborative training specific to your domain."
+    title: "Cohort & Team Alignment",
+    desc: "Get grouped with peers or team members to foster collaborative, role-specific learning."
   },
   {
     step: 2,
-    title: "Attend 3-Day Intensive Bootcamp",
-    desc: "Experience high-energy, immersive workshops focusing on practical, hands-on learning drills."
+    title: "Immersive Bootcamps",
+    desc: "Experience high-energy workshops focusing on active role-playing, communication drills, and simulations."
   },
   {
     step: 3,
     title: "Build Your Career Passport",
-    desc: "Create your verified portfolio containing resumes, pitch videos, and soft skill achievements."
+    desc: "Create your professional portfolio containing polished resumes, pitch videos, and skill badges."
   },
   {
     step: 4,
-    title: "Achieve Your PRS Score",
-    desc: "Unlock placement opportunities by reaching target Placement Readiness Scores in final evaluations."
+    title: "Continuous Evaluation",
+    desc: "Track skill development and unlock professional growth milestones through detailed performance feedback."
   }
 ];
 
 export const workloadData = [
-  { year: "Year 1", days: 9, label: "9 Training Days" },
-  { year: "Year 2", days: 9, label: "9 Training Days" },
-  { year: "Year 3", days: 6, label: "6 Training Days" },
-  { year: "Year 4", days: 6, label: "6 Training Days" }
+  { phaseName: "Phase 1", days: 9, label: "9 Training Days" },
+  { phaseName: "Phase 2", days: 9, label: "9 Training Days" },
+  { phaseName: "Phase 3", days: 6, label: "6 Training Days" },
+  { phaseName: "Phase 4", days: 6, label: "6 Training Days" }
 ];
 
 export const assessmentCards = [
   {
-    title: "Attendance Check",
+    title: "Continuous Engagement",
     icon: "Calendar",
-    desc: "90% mandatory attendance per theme guarantees that students consistently engage in team activities and peer learning."
+    desc: "Mandatory attendance guarantees that participants consistently engage in team activities, simulations, and peer learning."
   },
   {
     title: "Career Passport",
     icon: "Briefcase",
-    desc: "Students build a cumulative portfolio containing an ATS-friendly resume, elevator pitches, and custom goal statements."
+    desc: "Learners compile a cumulative portfolio containing resumes, recorded elevator pitches, and tailored career targets."
   },
   {
-    title: "PRS Score",
+    title: "Placement Readiness Score (PRS)",
     icon: "Target",
-    desc: "The Placement Readiness Score is computed based on continuous assessments, mock interviews, and group discussion evaluations."
+    desc: "A comprehensive metric computed based on continuous assessments, mock interviews, and collaboration evaluations."
   }
 ];
 
 export const testimonials = [
   {
     name: "Priya R.",
-    year: "Year 3",
-    dept: "CSE",
-    quote: "Let's Connect transformed how I walk into a room. My Year 2 bootcamp on conflict resolution literally helped me stand out in my internship interview and secure a PPO.",
+    affiliation: "Business Management Alumna",
+    quote: "Let's Connect transformed how I walk into a room. My communication and presentation training literally helped me stand out in my internship interview and secure a full-time role.",
     rating: 5
   },
   {
     name: "Rahul K.",
-    year: "Year 4",
-    dept: "ECE",
-    quote: "The Placement Readiness Score (PRS) is a game-changer. It forced me to refine my elevator pitch. The mock drills gave me confidence to ace my final placements.",
+    affiliation: "Engineering Alumnus",
+    quote: "The mock interview rounds and resume restructuring are absolute game-changers. The drills gave me the confidence to ace my final corporate placements.",
     rating: 5
   },
   {
-    name: "Sneha M.",
-    year: "Year 2",
-    dept: "IT",
-    quote: "I used to dread public speaking and stutter during class presentations. After just one bootcamp focused on body language and public speaking, I feel like a different person.",
+    name: "Dr. Anand S.",
+    affiliation: "Dean of Academic Affairs, Tech University",
+    quote: "Integrating these progressive phases into our curriculum has dramatically boosted our students' placements and active participation in seminars.",
     rating: 5
   },
   {
-    name: "Abhinav S.",
-    year: "Year 3",
-    dept: "Mechanical",
-    quote: "The Resume Restructuring workshop under Career Architecture was eye-opening. We didn't just write templates; we quantified our achievements and learned to talk about projects.",
+    name: "Meera G.",
+    affiliation: "HR Manager, FinTech Solutions",
+    quote: "We brought in Let's Connect for a fast-track 3-day bootcamp for our new hires. The improvement in their team collaboration and professional etiquette was immediately noticeable.",
     rating: 5
   },
   {
-    name: "Diya T.",
-    year: "Year 4",
-    dept: "EEE",
-    quote: "The 3-day intensive format forces active participation. There is zero theory block; it's all roleplay and direct, constructive peer feedback. Strongly recommended!",
+    name: "Sanjay M.",
+    affiliation: "Corporate Workshop Attendee",
+    quote: "The direct, constructive peer feedback is wonderful. There is zero dry theory; it's all active roleplaying, goal setting, and situational leadership.",
     rating: 5
   }
 ];

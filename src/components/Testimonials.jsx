@@ -49,14 +49,14 @@ export default function Testimonials() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-accent text-xs font-semibold uppercase tracking-widest bg-accent/10 px-4 py-1.5 rounded-full border border-accent/20">
-            Student Feedback
+            Success Stories
           </span>
           <h2 className="text-3xl md:text-5xl font-bold font-heading mt-6 mb-6 leading-tight">
-            What Our Students Say
+            What Our Learners Say
           </h2>
           <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-accent mx-auto mb-8 rounded-full" />
           <p className="text-textMuted text-base md:text-lg leading-relaxed font-light">
-            Real stories from undergraduate students who went through our progressive bootcamps and successfully stepped into the corporate landscape.
+            Real impact stories from students, academic leaders, and corporate professionals who have experienced our soft skills training.
           </p>
         </motion.div>
 
@@ -102,7 +102,7 @@ export default function Testimonials() {
                       {currentTestimonial.name}
                     </cite>
                     <span className="text-textMuted text-xs font-light block mt-0.5">
-                      {currentTestimonial.dept} Department, {currentTestimonial.year}
+                      {currentTestimonial.affiliation}
                     </span>
                   </div>
                 </div>

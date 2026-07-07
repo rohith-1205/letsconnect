@@ -14,7 +14,7 @@ function DynamicIcon({ name, className }) {
 export default function Curriculum() {
   const [activeTab, setActiveTab] = useState(1);
 
-  const activeData = curriculumData.find((item) => item.year === activeTab);
+  const activeData = curriculumData.find((item) => item.phase === activeTab);
   const isTwoCards = activeData.topics.length === 2;
 
   return (
@@ -35,11 +35,11 @@ export default function Curriculum() {
             Curriculum
           </span>
           <h2 className="text-3xl md:text-5xl font-bold font-heading mt-6 mb-6 leading-tight">
-            The 4-Year Journey
+            Progressive Training Phases
           </h2>
           <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-accent mx-auto mb-8 rounded-full" />
           <p className="text-textMuted text-base md:text-lg leading-relaxed font-light">
-            Each academic year focuses on distinct soft skill modules, progressive bootcamps, and real-world placement readiness evaluations.
+            Our training is structured into distinct phases, offering progressive soft skill modules tailored to career and leadership readiness.
           </p>
         </motion.div>
 
@@ -48,23 +48,23 @@ export default function Curriculum() {
           <div className="inline-flex flex-wrap md:flex-nowrap gap-2 bg-cardBg/30 p-2 rounded-full border border-white/5 shadow-2xl relative">
             {curriculumData.map((item) => (
               <button
-                key={item.year}
-                onClick={() => setActiveTab(item.year)}
+                key={item.phase}
+                onClick={() => setActiveTab(item.phase)}
                 className={`relative px-6 py-3 rounded-full text-sm font-semibold tracking-wide transition-colors duration-300 font-heading z-10 ${
-                  activeTab === item.year
+                  activeTab === item.phase
                     ? "text-textPrimary"
                     : "text-textMuted hover:text-textPrimary"
                 }`}
               >
                 {/* Smooth Sliding Highlight */}
-                {activeTab === item.year && (
+                {activeTab === item.phase && (
                   <motion.div
                     layoutId="activeTabIndicator"
                     className="absolute inset-0 bg-primary rounded-full border border-primary/20 -z-10 shadow-lg"
                     transition={{ type: "spring", stiffness: 350, damping: 28 }}
                   />
                 )}
-                Year {item.year}
+                Phase {item.phase}
               </button>
             ))}
           </div>

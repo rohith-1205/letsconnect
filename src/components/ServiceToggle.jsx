@@ -98,15 +98,15 @@ export default function ServiceToggle() {
               Training & Development
             </h3>
             <p className="text-textMuted text-sm md:text-base font-light mb-8 leading-relaxed">
-              Progressive student soft skills pathing and high-impact corporate workshops. Tailored bootcamps focusing on boardroom etiquette, communication, and placement preparation led by Padmaja L.
+              Progressive soft skills pathing and high-impact corporate workshops. Tailored bootcamps focusing on boardroom etiquette, communication, and placement preparation led by Padmaja L.
             </p>
 
             {/* Highlights */}
             <ul className="space-y-3 mb-10">
               {[
                 "Intensive Experiential Bootcamps",
-                "Structured 4-Year progressive curriculum",
-                "High Placement Readiness (PRS) score prep"
+                "Structured progressive training curriculum",
+                "High Placement & Career Readiness Preparation"
               ].map((highlight, idx) => (
                 <li key={idx} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-accent/15 border border-accent/20 flex items-center justify-center text-accent flex-shrink-0">
