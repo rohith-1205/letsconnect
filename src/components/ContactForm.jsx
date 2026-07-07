@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Loader2, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Loader2, Send, CheckCircle2 } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { contactInfo } from "../data/programData";
 
@@ -20,6 +20,7 @@ export default function ContactForm() {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -96,6 +97,7 @@ export default function ContactForm() {
           year: "",
           message: ""
         });
+        setIsSubmitted(true);
       } else {
         toast.error(result.message || "Submission failed. Please check your Web3Forms configuration.");
       }
@@ -163,11 +165,41 @@ export default function ContactForm() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7"
           >
-            <form
-              onSubmit={handleSubmit}
-              className="glass-card rounded-3xl p-8 border border-white/5 shadow-2xl flex flex-col gap-6 text-left"
-              noValidate
-            >
+            {isSubmitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="glass-card rounded-3xl p-8 border border-white/5 shadow-2xl flex flex-col items-center justify-center text-center gap-6 min-h-[400px]"
+              >
+                <div className="w-20 h-20 bg-primary/10 border border-primary/20 rounded-full flex items-center justify-center text-accent mb-2 relative">
+                  <span className="absolute inset-0 rounded-full bg-primary/20 animate-ping opacity-75" />
+                  <CheckCircle2 className="w-10 h-10 relative z-10" />
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-bold font-heading text-textPrimary">
+                  Thank You!
+                </h3>
+                
+                <p className="text-textMuted text-sm md:text-base leading-relaxed max-w-md">
+                  Your soft skills training enquiry has been received. Our team will reach out to you as soon as possible.
+                </p>
+                
+                <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-accent rounded-full my-2" />
+                
+                <button
+                  onClick={() => setIsSubmitted(false)}
+                  type="button"
+                  className="px-6 py-2.5 bg-white/5 border border-white/10 hover:bg-white/10 text-textPrimary text-xs font-semibold uppercase tracking-wider rounded-xl transition-all duration-300"
+                >
+                  Submit Another Enquiry
+                </button>
+              </motion.div>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="glass-card rounded-3xl p-8 border border-white/5 shadow-2xl flex flex-col gap-6 text-left"
+                noValidate
+              >
               {/* Full Name */}
               <div>
                 <label htmlFor="name" className="block text-textPrimary text-xs font-semibold uppercase tracking-wider mb-2">
@@ -278,6 +310,7 @@ export default function ContactForm() {
                 )}
               </button>
             </form>
+            )}
           </motion.div>
         </div>
       </div>
