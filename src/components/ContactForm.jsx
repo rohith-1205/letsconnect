@@ -15,8 +15,9 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    department: "",
-    year: "",
+    phone: "",
+    role: "",
+    organization: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,12 +43,8 @@ export default function ContactForm() {
       toast.error("Please enter a valid email address.");
       return;
     }
-    if (!formData.department) {
-      toast.error("Please select your department.");
-      return;
-    }
-    if (!formData.year) {
-      toast.error("Please select your year of study.");
+    if (!formData.role) {
+      toast.error("Please select who you are contacting as.");
       return;
     }
     if (!formData.message.trim()) {
@@ -93,8 +90,9 @@ export default function ContactForm() {
         setFormData({
           name: "",
           email: "",
-          department: "",
-          year: "",
+          phone: "",
+          role: "",
+          organization: "",
           message: ""
         });
         setIsSubmitted(true);
@@ -216,7 +214,7 @@ export default function ContactForm() {
                 />
               </div>
 
-              {/* Email & Dept Row */}
+              {/* Email & Phone Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="email" className="block text-textPrimary text-xs font-semibold uppercase tracking-wider mb-2">
@@ -228,51 +226,62 @@ export default function ContactForm() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="name@university.edu"
+                    placeholder="name@institution.com"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-textPrimary text-sm placeholder:text-textMuted/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="department" className="block text-textPrimary text-xs font-semibold uppercase tracking-wider mb-2">
-                    Department
+                  <label htmlFor="phone" className="block text-textPrimary text-xs font-semibold uppercase tracking-wider mb-2">
+                    Phone Number (Optional)
                   </label>
-                  <select
-                    id="department"
-                    name="department"
-                    value={formData.department}
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-surfaceBg border border-white/10 rounded-xl px-4 py-3 text-textPrimary text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
-                  >
-                    <option value="" disabled className="text-textMuted">Select Department</option>
-                    <option value="CSE">Computer Science (CSE)</option>
-                    <option value="ECE">Electronics (ECE)</option>
-                    <option value="IT">Information Tech (IT)</option>
-                    <option value="MECH">Mechanical Eng (ME)</option>
-                    <option value="EEE">Electrical Eng (EEE)</option>
-                    <option value="CIVIL">Civil Eng</option>
-                  </select>
+                    placeholder="Enter phone number"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-textPrimary text-sm placeholder:text-textMuted/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                  />
                 </div>
               </div>
 
-              {/* Year of Study */}
-              <div>
-                <label htmlFor="year" className="block text-textPrimary text-xs font-semibold uppercase tracking-wider mb-2">
-                  Year of Study
-                </label>
-                <select
-                  id="year"
-                  name="year"
-                  value={formData.year}
-                  onChange={handleChange}
-                  className="w-full bg-surfaceBg border border-white/10 rounded-xl px-4 py-3 text-textPrimary text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
-                >
-                  <option value="" disabled>Select Academic Year</option>
-                  <option value="1">Year 1 - Foundational</option>
-                  <option value="2">Year 2 - Collaborative</option>
-                  <option value="3">Year 3 - Career Architecture</option>
-                  <option value="4">Year 4 - Launchpad</option>
-                </select>
+              {/* Contacting As & Organization Name */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="role" className="block text-textPrimary text-xs font-semibold uppercase tracking-wider mb-2">
+                    I am contacting as a...
+                  </label>
+                  <select
+                    id="role"
+                    name="role"
+                    value={formData.role}
+                    onChange={handleChange}
+                    className="w-full bg-surfaceBg border border-white/10 rounded-xl px-4 py-3 text-textPrimary text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                  >
+                    <option value="" disabled className="text-textMuted">Select Contact Type</option>
+                    <option value="Student">Student</option>
+                    <option value="Educational Institution / College Representative">Educational Institution / College Representative</option>
+                    <option value="Corporate Partner">Corporate Partner</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="organization" className="block text-textPrimary text-xs font-semibold uppercase tracking-wider mb-2">
+                    Institution / Organization Name
+                  </label>
+                  <input
+                    type="text"
+                    id="organization"
+                    name="organization"
+                    value={formData.organization}
+                    onChange={handleChange}
+                    placeholder="e.g., University or Company name"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-textPrimary text-sm placeholder:text-textMuted/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                  />
+                </div>
               </div>
 
               {/* Message */}
