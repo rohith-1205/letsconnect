@@ -59,7 +59,7 @@ export default function ContactForm() {
     const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY_HERE";
     const payload = {
       access_key: accessKey,
-      subject: "Let's Connect - New Soft Skills Training Enquiry",
+      subject: "Let's Connect - New Soft Skills Training enquiry",
       from_name: "Let's Connect - Training Portal",
       ...formData
     };
