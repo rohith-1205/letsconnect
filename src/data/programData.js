@@ -248,7 +248,7 @@ export const contactInfo = [
   {
     icon: "MapPin",
     title: "Our Location",
-    value: "Let's Connect Training Cell",
-    desc: "Main Academic Block, Tech Campus, Bengaluru"
+    value: "Hosur",
+    desc: ""
   }
 ];
