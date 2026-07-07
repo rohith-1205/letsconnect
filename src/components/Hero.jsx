@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Play, X, RefreshCw, Flame, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { Zap, RefreshCw, Flame, CheckCircle2 } from "lucide-react";
 
 export default function Hero() {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
 
   // Floating pill data
   const floatPills = [
@@ -64,13 +63,6 @@ export default function Hero() {
             >
               Explore Curriculum
             </a>
-            <button
-              onClick={() => setIsVideoOpen(true)}
-              className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full font-bold transition-all duration-300 flex items-center justify-center gap-2 group"
-            >
-              <Play className="w-4 h-4 text-accent fill-accent group-hover:scale-110 transition-transform" />
-              Watch Overview
-            </button>
           </motion.div>
         </div>
 
@@ -119,63 +111,6 @@ export default function Hero() {
           })}
         </div>
       </div>
-
-      {/* Overview Video Modal */}
-      <AnimatePresence>
-        {isVideoOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsVideoOpen(false)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl glass-card rounded-3xl border border-white/10 overflow-hidden shadow-2xl bg-surfaceBg"
-            >
-              {/* Modal Header */}
-              <div className="p-4 border-b border-white/5 flex justify-between items-center bg-darkBg/50">
-                <span className="font-heading font-semibold text-textPrimary flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-accent" />
-                  Let's Connect - Soft Skills Program Overview
-                </span>
-                <button
-                  onClick={() => setIsVideoOpen(false)}
-                  className="p-1 hover:bg-white/10 rounded-full transition-colors text-textMuted hover:text-textPrimary"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-
-              {/* Video Player Placeholder */}
-              <div className="relative aspect-video w-full bg-black flex flex-col items-center justify-center p-6 text-center">
-                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center border border-primary/40 mb-4 animate-pulse">
-                  <Zap className="w-10 h-10 text-accent" />
-                </div>
-                <h3 className="text-2xl font-bold font-heading text-textPrimary mb-2">
-                  Soft Skills Bootcamp Showcase
-                </h3>
-                <p className="text-textMuted text-sm max-w-md">
-                  This mock preview captures real-life role-playing, conflict resolution drills, and candidate elevator pitch evaluations.
-                </p>
-                
-                {/* Visual indicator of a player */}
-                <div className="absolute bottom-6 left-6 right-6 flex items-center gap-4 text-xs text-textMuted bg-darkBg/60 py-2 px-4 rounded-lg">
-                  <Play className="w-4 h-4 text-accent fill-accent" />
-                  <div className="flex-1 h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="w-1/3 h-full bg-accent" />
-                  </div>
-                  <span>02:45 / 08:30</span>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

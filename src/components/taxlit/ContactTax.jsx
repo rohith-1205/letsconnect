@@ -44,7 +44,7 @@ export default function ContactTax() {
 
     setIsSubmitting(true);
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY_HERE";
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "5f3ed534-11f0-4a42-ab04-b70194d6d3b8";
     const payload = {
       access_key: accessKey,
       subject: "Let's Connect - New Webinar Registration",
