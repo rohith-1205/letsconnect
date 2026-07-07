@@ -242,7 +242,7 @@ export const contactInfo = [
   {
     icon: "Phone",
     title: "Call Us",
-    value: "+91 98765 43210",
+    value: "+91 6385448318",
     desc: "Mon - Fri, 9:00 AM - 5:00 PM"
   },
   {
