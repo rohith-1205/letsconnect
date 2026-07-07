@@ -103,7 +103,7 @@ export const founders = [
     name: "Vishal",
     role: "Founder",
     phone: "8526926234",
-    email: "letsconnect2k20@gmail.com",
+    email: "hello.letsconnectt@gmail.com",
     social: "Instagram (@letsconnect.network)",
     avatarColor: "bg-teal-500/10 text-teal-400 border-teal-500/20"
   },
@@ -111,7 +111,7 @@ export const founders = [
     name: "Padmaja L",
     role: "Co-Founder",
     phone: "6385448318",
-    email: "letsconnect2k20@gmail.com",
+    email: "hello.letsconnectt@gmail.com",
     social: "@letsconnect.network",
     avatarColor: "bg-teal-500/10 text-teal-400 border-teal-500/20"
   }

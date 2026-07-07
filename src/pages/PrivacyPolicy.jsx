@@ -321,7 +321,7 @@ export default function PrivacyPolicy() {
                 For data protection requests, queries, or to exercise your rights under this privacy document, please message us at:
               </p>
               <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col gap-2 font-mono text-sm max-w-md">
-                <p><span className="text-textPrimary font-semibold font-sans">Email:</span> letsconnect2k20@gmail.com</p>
+                <p><span className="text-textPrimary font-semibold font-sans">Email:</span> hello.letsconnectt@gmail.com</p>
                 <p><span className="text-textPrimary font-semibold font-sans">Instagram:</span> @letsconnect.network</p>
                 <p><span className="text-textPrimary font-semibold font-sans">Compliance Portal:</span> Let's Connect Network</p>
               </div>

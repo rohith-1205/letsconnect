@@ -175,7 +175,7 @@ export default function TermsAndConditions() {
                 To register for our professional soft skills training programs, or to engage us for corporate compliance and financial filing services, you must be at least 18 years of age or have explicit legal guardian consent if under 18 (for educational programs only).
               </p>
               <p>
-                You represent that all details you provide during registration, compliance onboarding, or consult queries are truthful, accurate, current, and complete. You are responsible for safeguarding your credentials and notifying us immediately at <span className="text-textPrimary font-semibold">letsconnect2k20@gmail.com</span> of any unauthorized access or security breaches.
+                You represent that all details you provide during registration, compliance onboarding, or consult queries are truthful, accurate, current, and complete. You are responsible for safeguarding your credentials and notifying us immediately at <span className="text-textPrimary font-semibold">hello.letsconnectt@gmail.com</span> of any unauthorized access or security breaches.
               </p>
             </div>
           </div>
@@ -336,7 +336,7 @@ export default function TermsAndConditions() {
                 If you have any questions or clarifications regarding these Terms & Conditions, please contact us at:
               </p>
               <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col gap-2 font-mono text-sm max-w-md">
-                <p><span className="text-textPrimary font-semibold font-sans">Email:</span> letsconnect2k20@gmail.com</p>
+                <p><span className="text-textPrimary font-semibold font-sans">Email:</span> hello.letsconnectt@gmail.com</p>
                 <p><span className="text-textPrimary font-semibold font-sans">Instagram:</span> @letsconnect.network</p>
                 <p><span className="text-textPrimary font-semibold font-sans">Business:</span> Let's Connect Network</p>
               </div>

@@ -236,7 +236,7 @@ export const contactInfo = [
   {
     icon: "Mail",
     title: "Email Us",
-    value: "connect@softskills-academy.edu",
+    value: "hello.letsconnectt@gmail.com",
     desc: "Get detailed brochures and schedules."
   },
   {

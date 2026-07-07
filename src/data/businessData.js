@@ -180,14 +180,14 @@ export const founders = [
     name: "Vishal",
     role: "Founder & Business Tax Consultant",
     phone: "8526926234",
-    email: "letsconnect2k20@gmail.com",
+    email: "hello.letsconnectt@gmail.com",
     avatarColor: "bg-primary/20 text-primary border-primary/30"
   },
   {
     name: "Padmaja L",
     role: "Co-Founder & HR Tech Consultant",
     phone: "6385448318",
-    email: "letsconnect2k20@gmail.com",
+    email: "hello.letsconnectt@gmail.com",
     social: "@letsconnect.network",
     avatarColor: "bg-accent/20 text-accent border-accent/30"
   }
